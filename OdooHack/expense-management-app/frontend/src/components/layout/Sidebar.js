@@ -29,6 +29,14 @@ const Sidebar = () => {
     { name: 'Profile', href: '/profile', icon: '👤' },
   ];
 
+  const advancedFeatures = [
+    { name: 'Smart Approvals', href: '/advanced/approvals', icon: '🚀', roles: ['admin', 'manager'] },
+    { name: 'Financial Controls', href: '/advanced/financial-controls', icon: '💼', roles: ['admin', 'manager'] },
+    { name: 'Receipt Manager', href: '/advanced/receipt-manager', icon: '📷', roles: ['admin', 'manager', 'employee'] },
+    { name: 'Advanced Reports', href: '/advanced/reporting', icon: '📊', roles: ['admin', 'manager'] },
+    { name: 'Integrations', href: '/advanced/integration', icon: '🔗', roles: ['admin'] },
+  ];
+
   return (
     <div className="bg-gradient-to-b from-[#000000] via-[#6037d9] to-[#2a65e5] w-64 h-full shadow-2xl flex flex-col">
       {/* Logo Section */}
@@ -47,27 +55,60 @@ const Sidebar = () => {
       </div>
 
       {/* Navigation */}
-      <div className="p-4">
-        <nav className="space-y-1">
-          {navigation.map((item) => (
-            <NavLink
-              key={item.name}
-              to={item.href}
-              className={({ isActive }) =>
-                `group flex items-center px-4 py-3 text-sm font-medium rounded-xl transition-all duration-200 ${
-                  isActive
-                    ? 'bg-gradient-to-r from-[#be42c3] to-[#6037d9] text-white shadow-lg transform scale-105'
-                    : 'text-white/80 hover:text-white hover:bg-white hover:bg-opacity-10 hover:transform hover:translate-x-1'
-                }`
-              }
-            >
-              <span className="text-xl mr-4 group-hover:animate-bounce">{item.icon}</span>
-              <span className="font-semibold">{item.name}</span>
-              <svg className="ml-auto w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </NavLink>
-          ))}
+      <div className="p-4 flex-1 overflow-y-auto">
+        <nav className="space-y-6">
+          {/* Main Navigation */}
+          <div className="space-y-1">
+            {navigation.map((item) => (
+              <NavLink
+                key={item.name}
+                to={item.href}
+                className={({ isActive }) =>
+                  `group flex items-center px-4 py-3 text-sm font-medium rounded-xl transition-all duration-200 ${
+                    isActive
+                      ? 'bg-gradient-to-r from-[#be42c3] to-[#6037d9] text-white shadow-lg transform scale-105'
+                      : 'text-white/80 hover:text-white hover:bg-white hover:bg-opacity-10 hover:transform hover:translate-x-1'
+                  }`
+                }
+              >
+                <span className="text-xl mr-4 group-hover:animate-bounce">{item.icon}</span>
+                <span className="font-semibold">{item.name}</span>
+                <svg className="ml-auto w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </NavLink>
+            ))}
+          </div>
+
+          {/* Advanced Features Section */}
+          <div>
+            <div className="px-4 mb-3">
+              <h3 className="text-[#be42c3] text-xs uppercase font-bold tracking-wider">Advanced Features</h3>
+            </div>
+            <div className="space-y-1">
+              {advancedFeatures
+                .filter(feature => feature.roles.includes(user?.role))
+                .map((item) => (
+                <NavLink
+                  key={item.name}
+                  to={item.href}
+                  className={({ isActive }) =>
+                    `group flex items-center px-4 py-3 text-sm font-medium rounded-xl transition-all duration-200 ${
+                      isActive
+                        ? 'bg-gradient-to-r from-[#ff6b9d] to-[#ffd6e2] text-gray-900 shadow-lg transform scale-105'
+                        : 'text-white/80 hover:text-white hover:bg-gradient-to-r hover:from-[#ffd6e2]/20 hover:to-[#ff6b9d]/20 hover:transform hover:translate-x-1'
+                    }`
+                  }
+                >
+                  <span className="text-xl mr-4 group-hover:animate-pulse">{item.icon}</span>
+                  <span className="font-semibold">{item.name}</span>
+                  <svg className="ml-auto w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </NavLink>
+              ))}
+            </div>
+          </div>
         </nav>
       </div>
 

@@ -45,12 +45,12 @@ class AuthService {
 
   async register(userData) {
     const response = await axios.post(`${API_BASE_URL}/auth/register`, userData);
-    return response.data;
+    return response.data.data; // Extract data from the nested structure
   }
 
   async login(credentials) {
     const response = await axios.post(`${API_BASE_URL}/auth/login`, credentials);
-    return response.data;
+    return response.data.data; // Extract data from the nested structure
   }
 
   async logout() {

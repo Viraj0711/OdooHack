@@ -184,6 +184,9 @@ const Register = () => {
                 className="mt-1 block w-full px-4 py-3 border-2 border-gray-200 rounded-xl shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#6037d9] focus:border-[#6037d9] transition-all duration-200"
                 placeholder="Enter your password"
               />
+              <p className="mt-1 text-xs text-gray-500">
+                Password must be at least 8 characters with uppercase, lowercase, number, and special character (@$!%*?&)
+              </p>
             </div>
 
             <div>

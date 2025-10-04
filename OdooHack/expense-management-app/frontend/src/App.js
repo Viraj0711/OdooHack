@@ -14,6 +14,7 @@ import NotFound from './pages/NotFound';
 // Import expense components
 import Expenses from './pages/Expenses';
 import ExpenseForm from './pages/ExpenseForm';
+import EnhancedExpenseForm from './pages/EnhancedExpenseForm';
 import ExpenseDetail from './pages/ExpenseDetail';
 import OfficeSuppliesExpense from './pages/OfficeSuppliesExpense';
 
@@ -28,6 +29,13 @@ import {
   Reports,
   Settings 
 } from './pages/PlaceholderPages';
+
+// Import advanced components
+import ApprovalWorkflow from './components/approval/ApprovalWorkflow';
+import FinancialControls from './components/financial/FinancialControls';
+import AdvancedReceiptManager from './components/receipt/AdvancedReceiptManager';
+import AdvancedReporting from './components/reporting/AdvancedReporting';
+import IntegrationAutomation from './components/automation/IntegrationAutomation';
 
 function App() {
   const { user, isLoading } = useAuth();
@@ -75,6 +83,7 @@ function App() {
             {/* Expense routes */}
             <Route path="expenses" element={<Expenses />} />
             <Route path="expenses/new" element={<ExpenseForm />} />
+            <Route path="expenses/enhanced" element={<EnhancedExpenseForm />} />
             <Route path="expenses/:id" element={<ExpenseDetail />} />
             <Route path="expenses/:id/edit" element={<ExpenseForm />} />
             <Route path="expenses/office-supplies" element={<OfficeSuppliesExpense />} />
@@ -121,6 +130,46 @@ function App() {
               element={
                 <ProtectedRoute allowedRoles={['admin', 'manager']}>
                   <Analytics />
+                </ProtectedRoute>
+              }
+            />
+
+            {/* Advanced Features */}
+            <Route
+              path="advanced/approvals"
+              element={
+                <ProtectedRoute allowedRoles={['admin', 'manager']}>
+                  <ApprovalWorkflow />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="advanced/financial-controls"
+              element={
+                <ProtectedRoute allowedRoles={['admin', 'manager']}>
+                  <FinancialControls />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="advanced/receipt-manager"
+              element={
+                <AdvancedReceiptManager />
+              }
+            />
+            <Route
+              path="advanced/reporting"
+              element={
+                <ProtectedRoute allowedRoles={['admin', 'manager']}>
+                  <AdvancedReporting />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="advanced/integration"
+              element={
+                <ProtectedRoute allowedRoles={['admin']}>
+                  <IntegrationAutomation />
                 </ProtectedRoute>
               }
             />

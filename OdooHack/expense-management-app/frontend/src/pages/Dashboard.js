@@ -163,6 +163,119 @@ const Dashboard = () => {
 
       {getDashboardContent()}
 
+      {/* Advanced Features Showcase */}
+      <div className="mt-8 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+        <div className="bg-gradient-to-r from-[#FFD6E2] to-[#ff6b9d] px-8 py-6">
+          <div className="flex items-center space-x-3">
+            <div className="p-2 bg-white/20 rounded-lg">
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h2 className="text-xl font-bold text-white">🚀 Advanced Features</h2>
+            <span className="bg-white/20 text-white text-xs px-2 py-1 rounded-full">NEW</span>
+          </div>
+          <p className="text-white/90 mt-2">Experience next-generation expense management</p>
+        </div>
+        <div className="p-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="group p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl border border-blue-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div className="flex items-start space-x-4">
+                <div className="p-3 bg-blue-500 rounded-lg">
+                  <span className="text-2xl">🚀</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-bold text-gray-900 mb-2">Smart Approvals</h3>
+                  <p className="text-sm text-gray-600 mb-3">Multi-level approval workflows with bulk processing and intelligent routing</p>
+                  <a href="/advanced/approvals" className="text-blue-600 text-sm font-medium hover:text-blue-800">
+                    Explore →
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="group p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-xl border border-green-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div className="flex items-start space-x-4">
+                <div className="p-3 bg-green-500 rounded-lg">
+                  <span className="text-2xl">💼</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-bold text-gray-900 mb-2">Financial Controls</h3>
+                  <p className="text-sm text-gray-600 mb-3">Budget tracking, policy validation, and automated tax calculations</p>
+                  <a href="/advanced/financial-controls" className="text-green-600 text-sm font-medium hover:text-green-800">
+                    Explore →
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="group p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl border border-purple-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div className="flex items-start space-x-4">
+                <div className="p-3 bg-purple-500 rounded-lg">
+                  <span className="text-2xl">📷</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-bold text-gray-900 mb-2">AI Receipt Manager</h3>
+                  <p className="text-sm text-gray-600 mb-3">OCR processing, duplicate detection, and mobile capture</p>
+                  <a href="/advanced/receipt-manager" className="text-purple-600 text-sm font-medium hover:text-purple-800">
+                    Explore →
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="group p-6 bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl border border-orange-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div className="flex items-start space-x-4">
+                <div className="p-3 bg-orange-500 rounded-lg">
+                  <span className="text-2xl">📊</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-bold text-gray-900 mb-2">Advanced Reports</h3>
+                  <p className="text-sm text-gray-600 mb-3">Custom dashboards, forecasting, and policy violation tracking</p>
+                  <a href="/advanced/reporting" className="text-orange-600 text-sm font-medium hover:text-orange-800">
+                    Explore →
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="group p-6 bg-gradient-to-br from-teal-50 to-teal-100 rounded-xl border border-teal-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div className="flex items-start space-x-4">
+                <div className="p-3 bg-teal-500 rounded-lg">
+                  <span className="text-2xl">🔗</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-bold text-gray-900 mb-2">Integrations</h3>
+                  <p className="text-sm text-gray-600 mb-3">Connect with accounting, banking, and business systems</p>
+                  {(user?.role === 'admin') ? (
+                    <a href="/advanced/integration" className="text-teal-600 text-sm font-medium hover:text-teal-800">
+                      Explore →
+                    </a>
+                  ) : (
+                    <span className="text-gray-400 text-sm">Admin only</span>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            <div className="group p-6 bg-gradient-to-br from-pink-50 to-pink-100 rounded-xl border border-pink-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div className="flex items-start space-x-4">
+                <div className="p-3 bg-pink-500 rounded-lg">
+                  <span className="text-2xl">✨</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-bold text-gray-900 mb-2">Enhanced Forms</h3>
+                  <p className="text-sm text-gray-600 mb-3">Smart expense forms with real-time validation and OCR</p>
+                  <a href="/expenses/enhanced" className="text-pink-600 text-sm font-medium hover:text-pink-800">
+                    Try Now →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Enhanced Recent Activity Section */}
       <div className="mt-8 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
         <div className="bg-gradient-to-r from-gray-50 to-blue-50 px-8 py-6 border-b border-gray-200">
