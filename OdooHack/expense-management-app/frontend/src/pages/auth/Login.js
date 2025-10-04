@@ -35,33 +35,33 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#6037d9] via-[#2a65e5] to-[#be42c3] py-12 px-4 sm:px-6 lg:px-8">
       {/* Background Pattern */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-white opacity-10 rounded-full"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white opacity-10 rounded-full"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white opacity-5 rounded-full"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#ffffff] opacity-10 rounded-full"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#ffffff] opacity-10 rounded-full"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#ffffff] opacity-5 rounded-full"></div>
       </div>
       
       <div className="max-w-md w-full space-y-8 relative z-10">
-        <div className="bg-white rounded-2xl shadow-2xl p-8">
+        <div className="bg-[#ffffff] rounded-2xl shadow-2xl p-8">
           <div className="text-center mb-8">
-            <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-lg">
+            <div className="w-20 h-20 bg-gradient-to-br from-[#6037d9] to-[#be42c3] rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-lg">
               <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
               </svg>
             </div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-[#6037d9] to-[#be42c3] bg-clip-text text-transparent mb-2">
               Welcome Back! 👋
             </h2>
-            <p className="text-gray-600">
+            <p className="text-[#000000]/70">
               Sign in to your expense management account
             </p>
             <div className="mt-4">
-              <span className="text-sm text-gray-500">Don't have an account? </span>
+              <span className="text-sm text-[#000000]/60">Don't have an account? </span>
               <Link
                 to="/register"
-                className="font-semibold text-blue-600 hover:text-blue-500 transition-colors"
+                className="font-semibold text-[#2a65e5] hover:text-[#6037d9] transition-colors"
               >
                 Create one here ✨
               </Link>
@@ -70,7 +70,7 @@ const Login = () => {
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="space-y-5">
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-semibold text-[#000000] mb-2">
                   📧 Email Address
                 </label>
                 <input
@@ -86,7 +86,7 @@ const Login = () => {
                 />
               </div>
               <div>
-                <label htmlFor="password" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="password" className="block text-sm font-semibold text-[#000000] mb-2">
                   🔐 Password
                 </label>
                 <input
@@ -107,11 +107,11 @@ const Login = () => {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full flex justify-center items-center py-4 px-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-xl hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-4 focus:ring-blue-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:-translate-y-0.5 transition-all duration-200 shadow-lg hover:shadow-xl"
+                className="w-full flex justify-center items-center py-4 px-6 bg-gradient-to-r from-[#6037d9] via-[#2a65e5] to-[#be42c3] text-[#ffffff] font-bold rounded-xl hover:from-[#be42c3] hover:via-[#6037d9] hover:to-[#2a65e5] focus:outline-none focus:ring-4 focus:ring-[#6037d9]/30 disabled:opacity-50 disabled:cursor-not-allowed transform hover:-translate-y-0.5 transition-all duration-200 shadow-lg hover:shadow-xl"
               >
                 {isLoading ? (
                   <>
-                    <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent mr-2"></div>
+                    <div className="animate-spin rounded-full h-5 w-5 border-2 border-[#ffffff] border-t-transparent mr-2"></div>
                     Signing in...
                   </>
                 ) : (

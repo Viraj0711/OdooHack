@@ -24,7 +24,9 @@ import {
   Users, 
   Company, 
   Workflows, 
-  Analytics 
+  Analytics,
+  Reports,
+  Settings 
 } from './pages/PlaceholderPages';
 
 function App() {
@@ -32,7 +34,7 @@ function App() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-[#ffffff]">
         <LoadingSpinner size="lg" />
       </div>
     );
@@ -66,6 +68,8 @@ function App() {
           >
             <Route index element={<Navigate to="/dashboard" replace />} />
             <Route path="dashboard" element={<Dashboard />} />
+            <Route path="reports" element={<Reports />} />
+            <Route path="settings" element={<Settings />} />
             <Route path="profile" element={<Profile />} />
             
             {/* Expense routes */}
